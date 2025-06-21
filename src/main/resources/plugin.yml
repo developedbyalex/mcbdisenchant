@@ -1,0 +1,17 @@
+name: MCBDisenchant
+version: '${project.version}'
+main: com.mcbdisenchant.MCBDisenchant
+api-version: '1.21'
+description: A Minecraft plugin to disenchant items through a GUI
+author: YourName
+
+commands:
+  disenchant:
+    description: Opens the disenchant GUI
+    usage: /disenchant
+    permission: mcbdisenchant.use
+
+permissions:
+  mcbdisenchant.use:
+    description: Allows the player to use the disenchant command
+    default: true 

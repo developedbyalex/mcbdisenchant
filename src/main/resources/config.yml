@@ -1,0 +1,24 @@
+# MCBDisenchant Configuration
+
+# GUI Settings
+gui:
+  title: "<gradient:#ff6b6b:#4ecdc4>Disenchant Item</gradient>"
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    name: "<gray> </gray>"
+
+# Messages (using MiniMessage format)
+messages:
+  no_item_in_hand: "<red>You must hold an item in your main hand to disenchant!</red>"
+  no_enchantments: "<yellow>This item has no enchantments to remove!</yellow>"
+  enchantment_removed: "<green>Successfully removed <white>{enchantment}</white> from your item!</green>"
+  gui_item_name: "<aqua>Item to Disenchant</aqua>"
+  enchanted_book_lore:
+    - "<gray>Click to remove this enchantment</gray>"
+    - "<yellow>Level: {level}</yellow>"
+
+# Sound Effects (optional)
+sounds:
+  enchantment_removed: ENTITY_EXPERIENCE_ORB_PICKUP
+  gui_open: BLOCK_CHEST_OPEN
+  error: ENTITY_VILLAGER_NO 
