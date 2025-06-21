@@ -6,6 +6,9 @@ gui:
   filler:
     material: GRAY_STAINED_GLASS_PANE
     name: "<gray> </gray>"
+  empty_slot_filler:
+    material: GRAY_DYE
+    name: "<dark_gray>Empty Slot</dark_gray>"
 
 # Messages (using MiniMessage format)
 messages:

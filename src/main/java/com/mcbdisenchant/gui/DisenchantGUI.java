@@ -59,6 +59,9 @@ public class DisenchantGUI {
         
         // Add enchanted books for each enchantment
         addEnchantedBooks();
+        
+        // Fill any remaining empty slots with gray dye
+        fillEmptySlots();
     }
     
     private void addFillerItems() {
@@ -158,6 +161,34 @@ public class DisenchantGUI {
         }
         
         return result.toString();
+    }
+    
+    private void fillEmptySlots() {
+        // Get configurable material and name for empty slot filler
+        String materialName = getInstance().getConfig().getString("gui.empty_slot_filler.material", "GRAY_DYE");
+        String fillerName = getInstance().getConfig().getString("gui.empty_slot_filler.name", "<dark_gray>Empty Slot</dark_gray>");
+        
+        Material fillerMaterial;
+        try {
+            fillerMaterial = Material.valueOf(materialName);
+        } catch (IllegalArgumentException e) {
+            fillerMaterial = Material.GRAY_DYE;
+        }
+        
+        // Create empty slot filler item
+        ItemStack emptySlotFiller = new ItemStack(fillerMaterial);
+        ItemMeta meta = emptySlotFiller.getItemMeta();
+        if (meta != null) {
+            meta.displayName(MiniMessage.miniMessage().deserialize(fillerName));
+            emptySlotFiller.setItemMeta(meta);
+        }
+        
+        // Fill any empty slots with the filler item
+        for (int i = 0; i < inventory.getSize(); i++) {
+            if (inventory.getItem(i) == null) {
+                inventory.setItem(i, emptySlotFiller);
+            }
+        }
     }
     
     public void open() {

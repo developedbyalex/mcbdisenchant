@@ -21,6 +21,7 @@
   - [ ] One enchanted book per enchantment on the item
   - [ ] Book name and lore use MiniMessage
   - [ ] Add lore to enchanted book showing enchantment level
+- [x] **NEW**: Fill all remaining empty spaces with gray dye (configurable)
 
 ## 🛠️ Core Functionality
 - [ ] `/disenchant` command:
